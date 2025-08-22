@@ -1,0 +1,27 @@
+<mujoco model="stage">
+	<compiler angle="radian" strippath="true" autolimits="true" inertiafromgeom="true" />
+	<include file="../common/default.xml" />
+    <asset>
+        <!-- <mesh name="camera" file="../assets/camera.stl" /> -->
+        <mesh name="stage_base" file="../assets/stage_base.stl" scale="0.001 0.001 0.001" />
+        <mesh name="stage_axis" file="../assets/stage_axis.stl" scale="0.001 0.001 0.001" />
+    </asset>
+	<worldbody>
+
+	<body name="stage/base">
+		<geom name="stage/base" type="mesh" mesh="stage_base" pos="0 0 0" euler="0 0 0" class="visual"/>
+		<inertial mass="10.1934626941949" pos="-0.006055673232456789 0.1156426328216132 0.01728651720170607" fullinertia="0.06643149011192773 0.01258380628891765 0.06300817000895997 0.0019355361989908156 -0.0002743789213502296 0.007765215958998828" />
+		<body name="stage/axis" pos="0.0 0.15970000000001808 0.17609999999999487" euler="-1.5707963267948966 1.514612938024344e-28 5.777323064393413e-14">
+			<joint name="stage/joint"  axis="-1 0 0" pos="-0.05539991076596271 0.16789992849250493 0.008199999999990005" />
+			<geom name="stage/axis" type="mesh" mesh="stage_axis" pos="0 0 0" euler="0 0 0" class="collision"/>
+			<inertial mass="2.3097812081000826" pos="-0.13926555560133777 0.1679000000000059 0.008199999999980874" fullinertia="0.0010901588387390434 0.005210702532227884 0.005213906461695833 1.5477716741279997e-16 -4.280820183588932e-16 -9.248947713987037e-07" />
+			<site name="stage/attachment_site"  pos="-0.3 0.15 0" quat="0 -1.414 0 1.414" />
+
+		</body>
+	</body>	
+
+	</worldbody>
+	<actuator>
+		<position joint="stage/joint" name="stage/joint" kp="5000" kv="140" ctrlrange="-6.28 6.28" forcerange="-1000 1000" />
+	</actuator>
+</mujoco>

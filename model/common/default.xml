@@ -1,0 +1,19 @@
+<mujoco>
+    <default>
+
+        <default class="ur5e">
+            <material specular="0.5" shininess="0.25"/>
+            <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.1"/>
+            <general gaintype="fixed" biastype="affine" ctrlrange="-6.2831 6.2831" gainprm="2000" biasprm="0 -2000 -200" forcerange="-150 150"/>
+            <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4"/>  
+        </default>
+        
+        <default class="visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" rgba="1 1 1 1"/>
+        </default>
+
+        <default class="collision">
+            <geom  type="mesh" contype="1" conaffinity="1" group="2" rgba="1 1 1 1"/>
+        </default>
+    </default>
+</mujoco>

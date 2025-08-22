@@ -1,0 +1,13 @@
+<mujoco>
+    <compiler angle="radian" strippath="true" autolimits="true" inertiafromgeom="true" />
+	<include file="../common/default.xml" />
+    <asset>
+        <mesh name="camera" file="../assets/camera.stl" />
+    </asset>
+    <worldbody>
+        <body name="camera" pos="0 0 0" euler="0 0 0">
+            <geom name="camera" type="mesh" mesh="camera" pos="0 0 0" euler="0 0 0" class="collision"/>
+            <inertial mass="0.07838302609574" pos="0.010628179378081623 -0.01388813373665584 0.004822849842420634"  />
+        </body>
+    </worldbody>
+</mujoco> 
