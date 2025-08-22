@@ -1,0 +1,60 @@
+<mujoco model="Agilebot_GBT_P7A_900">
+	<compiler angle="radian" strippath="true" autolimits="true" inertiafromgeom="auto"/>
+	<include file="../common/default.xml" />
+
+    <asset>
+        <mesh name="p7a_900_base_link" file="../assets/p7a_900_base_link.STL"/>
+        <mesh name="p7a_900_link1" file="../assets/p7a_900_link1.STL"/>
+        <mesh name="p7a_900_link2" file="../assets/p7a_900_link2.STL"/>
+        <mesh name="p7a_900_link3" file="../assets/p7a_900_link3.STL"/>
+        <mesh name="p7a_900_link4" file="../assets/p7a_900_link4.STL"/>
+        <mesh name="p7a_900_link5" file="../assets/p7a_900_link5.STL"/>
+        <mesh name="p7a_900_link6" file="../assets/p7a_900_link6.STL"/>
+    </asset>
+
+	<worldbody>
+		<body name="base" quat="1 0 0 0" pos="0 0 0" childclass="ur5e">
+			<geom name="base" mesh="p7a_900_base_link" class="visual" />
+			<body name="link1" pos="0 0 0.365">
+				<inertial pos="0.00855439 0.00493839 -0.0854963" quat="0.76009 -0.144959 0.286881 0.564756" mass="1.72755" diaginertia="0.0136203 0.0119502 0.0079266"/>
+				<joint name="joint1" pos="0 0 0" axis="0 0 1" range="-2.94 2.94"/>
+				<geom type="mesh" rgba="1 1 1 1" mesh="p7a_900_link1"/>
+				<body name="link2" pos="0.03 0 0">
+					<inertial pos="-0.00426747 0.0175442 0.0779167" quat="0.697577 -0.0933859 0.0690824 0.707031" mass="4.07305" diaginertia="0.0407618 0.0378254 0.0102757"/>
+					<joint name="joint2" pos="0 0 0" axis="0 -1 0" range="-2.33 1.72"/>
+					<geom type="mesh" rgba="1 1 1 1" mesh="p7a_900_link2"/>
+					<body name="link3" pos="0 0 0.45">
+						<inertial pos="0.026126 0.017504 0.021016" quat="-0.0830012 0.454863 -0.080736 0.883002" mass="1.4384" diaginertia="0.00600491 0.00593127 0.00405612"/>
+						<joint name="joint3" pos="0 0 0" axis="0 -1 0" range="-1.2 3.47"/>
+						<geom type="mesh" rgba="1 1 1 1" mesh="p7a_900_link3"/>
+						<body name="link4" pos="0 0 0.035">
+							<inertial pos="0.241476 0.00191576 0.00195141" quat="0.475234 0.486635 0.521037 0.515615" mass="0.785225" diaginertia="0.00644006 0.00532993 0.00168066"/>
+							<joint name="joint4" pos="0 0 0" axis="1 0 0" range="-3.29 3.29"/>
+							<geom type="mesh" rgba="1 1 1 1" mesh="p7a_900_link4"/>
+							<body name="link5" pos="0.42 0 0">
+								<inertial pos="0.025425 0.00171246 -4.31494e-06" quat="0.529333 0.529857 0.468748 0.46833" mass="0.466263" diaginertia="0.000443443 0.000411284 0.000388818"/>
+								<joint name="joint5" pos="0 0 0" axis="0 -1 0" range="-1.98 1.98"/>
+								<geom type="mesh" rgba="1 1 1 1" mesh="p7a_900_link5"/>
+								<body name="link6" pos="0.102 0 0" quat="1.89469e-08 0.707107 -1.89469e-08 0.707107">
+									<inertial pos="-0.00735235 0.000143626 -6.14193e-11" quat="0.999998 0 0 -0.00209196" mass="0.018201" diaginertia="4.36542e-06 2.47336e-06 2.42204e-06"/>
+									<joint name="joint6" pos="0 0 0" axis="0 0 1" range="-6.26 6.26"/>
+									<geom quat="0.707107 0 -0.707107 0" type="mesh" rgba="1 1 1 1" mesh="p7a_900_link6"/>
+									<site name="attachment_site" type="sphere" size="0.01" pos="0 0 0" rgba="1 0 0 1"/>
+									<camera name="end_effector_cam" pos="-0.2 0.0 0.1" euler="3.14159265 1.57079633 1.57079633" fovy="12" resolution=" 4500 3000" />
+								</body>
+							</body>
+						</body>
+					</body>
+				</body>
+			</body>
+		</body>
+	</worldbody>
+	<actuator>
+		<position joint="joint1" name="joint1" kp="2000"  kv="200" ctrlrange="-2.94 2.94" forcerange="-1000 1000"/>
+		<position joint="joint2" name="joint2" kp="2000" kv="200" ctrlrange="-2.33 1.72" forcerange="-1000 1000"/>
+		<position joint="joint3" name="joint3" kp="2000" kv="200" ctrlrange="-1.2 3.47" forcerange="-1000 1000"/>
+		<position joint="joint4" name="joint4" kp="200" kv="20" ctrlrange="-3.29 3.29" forcerange="-400 400"/>
+		<position joint="joint5" name="joint5" kp="200" kv="20" ctrlrange="-1.98 1.98" forcerange="-400 400"/>
+		<position joint="joint6" name="joint6" kp="200" kv= "20" ctrlrange="-6.26 6.26" forcerange="-400 400" />
+	</actuator>
+</mujoco>

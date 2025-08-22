@@ -1,0 +1,14 @@
+<mujoco model="workpiece_link1">
+	<compiler angle="radian" strippath="true" autolimits="true" inertiafromgeom="true" />
+	<include file="../common/default.xml" />
+    <asset>
+        <mesh name="workpiece_link1" file="../assets/workpiece_link1.STL"  />
+
+    </asset>
+	<worldbody>
+		<body name="workpiece_link1" pos="0 0 0.085" euler="0 0 0">
+			<geom name="workpiece_link1" type="mesh" mesh="workpiece_link1" pos="0 0 0" euler="0 0 0" />
+			<inertial mass="20.785564459096108" pos="0.031938715255495936 0.005909402584978495 0.009300344506818702" fullinertia="0.5281649413648726 0.28005570098644017 0.2698861094601719 -0.000565750064491712 0.003926482942242371 0.022469408437196376" />
+		</body>
+	</worldbody>
+</mujoco>

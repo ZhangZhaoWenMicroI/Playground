@@ -1,0 +1,15 @@
+<mujoco model="computer">
+	<compiler angle="radian" strippath="true" autolimits="true" inertiafromgeom="true" />
+	<include file="../common/default.xml" />
+
+    <asset>
+        <mesh name="pc" file="../assets/pc.stl" scale="0.001 0.001 0.001" />
+    </asset>
+
+	<worldbody>
+		<body name="pc">
+			<geom name="pc" type="mesh" mesh="pc" pos="0 0 0" euler="0 0 0" class="collision" />
+			<inertial mass="32.47137420881847" pos="-0.0015432477069013144 0.1722588237064439 0.4326314304401153"/>
+		</body>
+	</worldbody>
+</mujoco>
