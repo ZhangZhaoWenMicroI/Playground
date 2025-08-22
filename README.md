@@ -6,7 +6,7 @@
 - 相机采图与图像集自动落盘
 - 友好的可视化与交互
 
-![flyshot]()
+![flyshot](https://github.com/user-attachments/assets/54a8c150-2a42-4e15-a3ca-3add6213a4fc)
 
 ---
 
