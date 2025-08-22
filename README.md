@@ -8,7 +8,7 @@
 
 ![flyshot](https://github.com/user-attachments/assets/54a8c150-2a42-4e15-a3ca-3add6213a4fc)
 
----
+
 
 ## 为什么值得一试？
 - 一行命令即可跑通示例场景: 环境建模 → 机械臂运动 → 相机采图 → 图像数据落盘
@@ -17,7 +17,7 @@
 - 数据生产友好: 自动保存 RGB 图像与末端 TCP 轨迹
 - 代码工程化: 核心能力模块化封装，易于二次开发
 
----
+
 
 ## 目录结构
 ```
@@ -41,7 +41,7 @@
     └── Utils/                  # 工具类
 ```
 
----
+
 
 ## 快速开始
 
@@ -63,7 +63,7 @@ python -m examples.flyshot.p7a_shoot_link1
 - 输出每个点位采集的图像
   - dataset/1.jpg, 2.jpg, ...          
 
----
+
 
 ## Star 与贡献
 如果这个项目对你有帮助，欢迎点亮 Star！也欢迎提交 Issue/PR 一起完善 :)
